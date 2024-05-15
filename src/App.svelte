@@ -97,7 +97,7 @@
 
     onMount(async () => {
         try {
-            data = await d3.csv('proj3_us_df.csv', d => {
+            data = await d3.csv('public/proj3_us_df.csv', d => {
                 return {
                     ...d,
                     sunshine_total_min: +d.sunshine_total_min,
@@ -108,7 +108,7 @@
             });
             console.log('Weather data loaded:', data.slice(0, 5));  // Debugging
 
-            geojsonData = await d3.json('UnitedStates.json');
+            geojsonData = await d3.json('public/UnitedStates.json');
             console.log('GeoJSON data loaded:', geojsonData);  // Debugging
 
             // Set domain based on the sunshine_total_min range of the data
